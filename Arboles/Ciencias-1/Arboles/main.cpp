@@ -14,15 +14,14 @@
 	int opcion=0;
 	int elimina=0;
 	int validar = 0;
-
-do{
 	
-		cout<<"Ingrese el tamanio de la cola"<<endl; 	
+	cout<<"Ingrese el tamanio de la cola"<<endl; 	
      	cin>>tam; 	
 		tam++; 	
 		int arr[tam]; 	
 		arr[0]=0; 
- 
+
+do{
 	cout<<"Bienvenido, por favor elija una opcion"<<endl;
 	cout<<" 1. Insertar una cola de prioridad"<<endl;
 	cout<<" 2. Atender la cola"<<endl;
@@ -70,25 +69,44 @@ case 2:
 	cin>>elimina;  eSto no deberia ir porque se sabe que atiende al primero de la lista*/
 	int izq,der,auxiliar,nuevo;
 	
-	izq = arr[i*2];
-	der = arr[(i*2)+1];
+	izq = arr[1*2];
+	der = arr[(1*2)+1];
 	
 	
-		auxiliar = arr[tam];
+		auxiliar = arr[tam-1];
+		cout<<"TAM: "<<auxiliar<<endl;
+		cout<<"IZQ: "<<izq<<endl;
+		cout<<"DER: "<<der<<endl;
 		
 		if(auxiliar>izq && auxiliar>der){
 			arr[1]= auxiliar;
 			
-			cout<< "Arr: "<<arr[1];
+			cout<< "Arr: "<<arr[1]<<endl;
 		}else{
+			
 			if(izq>auxiliar && izq > der){
 				arr[1] = izq;
+				nuevo = izq;
+				izq = auxiliar;
+				/*
+				if(arr[izq*2] > arr[izq*2+1] && arr[izq*2]>auxiliar){
+					arr[izq] = arr[izq*2];
+				}else{
+					if(auxiliar>arr[izq*2] && auxiliar> arr[izq*2+1]){
+					arr[izq] = auxiliar;	
+					}else{
+					arr[izq] = arr[izq*2+1] ;
+					
+				}
+				}*/
+				cout<< "Arr Iz: "<<arr[1]<<endl;
 			}else{
 				arr[1] = der;
+				cout<< "Arr Deer: "<<arr[1]<<endl;
 			}
 		}
 	
-	//tam--;
+	tam--; // Desactiva la última casilla
 	
 	cout<<"la cola de prioridad es:"<<endl; 	
 			 	for(i=1; i<tam; i++){ 		 	
