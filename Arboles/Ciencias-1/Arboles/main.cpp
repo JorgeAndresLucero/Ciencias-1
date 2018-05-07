@@ -16,22 +16,21 @@
 	int validar = 0;
 
 do{
+	
+		cout<<"Ingrese el tamanio de la cola"<<endl; 	
+     	cin>>tam; 	
+		tam++; 	
+		int arr[tam]; 	
+		arr[0]=0; 
  
 	cout<<"Bienvenido, por favor elija una opcion"<<endl;
 	cout<<" 1. Insertar una cola de prioridad"<<endl;
-	cout<<" 2. Eliminar una posicion"<<endl;
+	cout<<" 2. Atender la cola"<<endl;
 	cin>>opcion;
-
-   			
-		int arr[tam]; 	
-		arr[0]=0; 	 
-   switch(opcion){
-		case 1 :
-			
-		cout<<"Ingrese el tamanio de la cola"<<endl; 	
-     	cin>>tam; 	
-		tam++; 
 		
+		 
+   switch(opcion){
+		case 1 :		
 		for(i=1; i<tam;i++){ 		
 		cout<<"Ingrese el valor de prioridad "<<i<<endl; 		
 		cin>>prior; 		
@@ -69,19 +68,28 @@ case 2:
 	//aqui va la logica :P
 	/*cout<<"Ingrese la prioridad que desea eliminar"<<endl;
 	cin>>elimina;  eSto no deberia ir porque se sabe que atiende al primero de la lista*/
-	int izq,der,auxiliar;
+	int izq,der,auxiliar,nuevo;
 	
-	izq = (i*2);
-	der = (i*2)+1;
+	izq = arr[i*2];
+	der = arr[(i*2)+1];
 	
-	for(i=1; i<tam;i++){
+	
 		auxiliar = arr[tam];
 		
 		if(auxiliar>izq && auxiliar>der){
-			arr[1]== auxiliar;
+			arr[1]= auxiliar;
+			
+			cout<< "Arr: "<<arr[1];
+		}else{
+			if(izq>auxiliar && izq > der){
+				arr[1] = izq;
+			}else{
+				arr[1] = der;
+			}
 		}
-	}
-	tam--;
+	
+	//tam--;
+	
 	cout<<"la cola de prioridad es:"<<endl; 	
 			 	for(i=1; i<tam; i++){ 		 	
 			 		cout<<" "<<arr[i]; 	
