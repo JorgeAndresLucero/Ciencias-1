@@ -1,7 +1,7 @@
 template <class T>
 
 struct nodo{
-	T dato;
+	T clave;
 	nodo *izq;
 	nodo *der;
 	
@@ -11,7 +11,20 @@ struct nodo{
 class AVL{
 	
 	public:
+		//Constructor
 		AVL(){
 			raiz = null;
+		};
+		
+		//Métodos
+		void_insertar(int dato){
+			Nodo<T>=*b;
+			b = 
 		}
+		bool borrar_nodo(int dato);
+		
+		
+		
+		
+	
 };
