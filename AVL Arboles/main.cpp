@@ -26,13 +26,16 @@ int main(int argc, char** argv) {
 		switch(opcion){
 			
 			case 1:
+				cout<< "Inserte el nuevo nodo"<<endl;
 				arbolAVL.insertar(10);
 				break;
 				
 				case 2:
+					cout<<"Ingrese el nodo a eliminar"<<endl;
 					break;
 					
 					case 3:
+						cout<< "El nodo raiz es : "<<endl;
 						break;
 						
 						default:

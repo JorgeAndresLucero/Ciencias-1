@@ -35,9 +35,29 @@ class AVL{
 			aux_hijo -> der = aux;
 			aux_hijo -> izq = aux_nieto;
 		}
-		
+		  
+		/*
+		if(aux<-1 && aux->izq=-1){
+		}
+		*/
 		rotacion_sen_izq(){
-			aux_hijo;
+			aux_hijo ->izq = aux;
+			aux_hijo ->der =aux_nieto;
+		}
+		
+		rotacion_dob_der(){
+			 
+			
+		}
+		
+		rotacion_dob_izq(){
+			
+			//Primera rotación
+			aux -> der= aux_nieto;
+			aux_nieto -> der = aux_hijo;
+			//Segunda rotación
+			aux_nieto -> der = aux_hijo;
+			aux_nieto -> izq = aux;
 		}
 		
 	public:
@@ -60,7 +80,9 @@ class AVL{
 				
 		}
 		
-		bool borrar_nodo(int dato);
+	/*	bool borrar_nodo(int dato){
+			
+		}*/
 		
 		
 		get_raiz(){
