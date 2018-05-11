@@ -12,16 +12,35 @@ template <class T>
 class AVL{
 	
 	int tam;
-	nodo<T> *raiz;
+	int raiz;
+	nodo<T> *aux;
+	nodo<T> *aux_hijo;
+	nodo<T> *aux_nieto;
 	
-	public:
-		//Constructor
+	private:
 		AVL(){
-			
-			raiz = NULL;
 			tam = 0;
-		};
+			raiz= 0;
+			aux = 0;
+			aux_hijo = 0;
+			aux_nieto = 0;
+		}
 		
+		/*
+		if(aux<-1 && aux->izq=-1){
+		}
+		*/
+		rotacion_sen_der(){
+			
+			aux_hijo -> der = aux;
+			aux_hijo -> izq = aux_nieto;
+		}
+		
+		rotacion_sen_izq(){
+			aux_hijo;
+		}
+		
+	public:
 		//Métodos
 		void insertar(int dato){
 			nodo<T> *nodito;
@@ -31,7 +50,7 @@ class AVL{
 			nodito -> izq = NULL; 
 			//Insertar
 			if(dato > nodito->clave){
-				nodito -> der = nodito->clave;
+				nodito -> der = nodito-> clave;
 			}else{
 				if(dato < nodito->clave){
 					nodito -> izq = nodito -> clave;
@@ -43,17 +62,6 @@ class AVL{
 		
 		bool borrar_nodo(int dato);
 		
-		/*
-		if(aux<-1 && aux->izq=-1){
-		}
-		*/
-		rotacion_sen_der(){
-			
-		}
-		
-		rotacion_sen_izq(){
-		
-		}
 		
 		get_raiz(){
 			return raiz;
