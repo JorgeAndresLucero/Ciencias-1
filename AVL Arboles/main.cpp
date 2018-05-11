@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdio.h>
+#include "AVL.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -10,9 +11,8 @@ int main(int argc, char** argv) {
 	
 	int opcion;
 	AVL<int> arbolAVL; 
-	
+
 	do{
-		
 		cout<<"Por favor seleccione una opcion"<<endl;
 		cout<<"1. Insertar un nodo"<<endl;
 		cout<<"2. Eliminar un nodo"<<endl;
@@ -26,6 +26,7 @@ int main(int argc, char** argv) {
 		switch(opcion){
 			
 			case 1:
+				arbolAVL.insertar(10);
 				break;
 				
 				case 2:
